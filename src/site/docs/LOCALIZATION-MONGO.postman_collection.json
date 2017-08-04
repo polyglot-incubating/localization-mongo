@@ -1,0 +1,236 @@
+{
+	"variables": [],
+	"info": {
+		"name": "LOCALIZATION-MONGO",
+		"_postman_id": "151081d7-c13e-766e-39c5-95f114b41053",
+		"description": "LOCALIZATION-MONGO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOCALIZATION-INFO",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/i18n/messages/info?k1=val1&k2=val2&k3=val3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"i18n",
+						"messages",
+						"info"
+					],
+					"query": [
+						{
+							"key": "k1",
+							"value": "val1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "k2",
+							"value": "val2",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "k3",
+							"value": "val3",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "LOCALIZATION-INFO"
+			},
+			"response": []
+		},
+		{
+			"name": "LOCALIZATION-ADD",
+			"request": {
+				"url": "http://localhost:8080/i18n/messages",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"code\" : \"localeService.hello\", \r\n    \"lang\" : \"en\", \r\n    \"value\" : \"Hello\", \r\n    \"creator\" : \"aider\"\r\n}"
+				},
+				"description": "LOCALIZATION-ADD"
+			},
+			"response": []
+		},
+		{
+			"name": "LOCALIZATION-GET",
+			"request": {
+				"url": "http://localhost:8080/i18n/messages/localeService.hello/en",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "LOCALIZATION-GET"
+			},
+			"response": []
+		},
+		{
+			"name": "LOCALIZATION-QUERY",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/i18n/messages/query?value=pass&lang=en",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"i18n",
+						"messages",
+						"query"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "pass",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-auth-token",
+						"value": "016ae37b-fb59-4c1a-91d6-3956379a773c",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "LOCALIZATION-QUERY"
+			},
+			"response": []
+		},
+		{
+			"name": "LOCALIZATION-QUERY-ADVANCED",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/i18n/messages/query?codes=AccountStatusUserDetailsChecker.locked,AclEntryAfterInvocationProvider.noPermission,BindAuthenticator.emptyPassword&lang=ko",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"i18n",
+						"messages",
+						"query"
+					],
+					"query": [
+						{
+							"key": "codes",
+							"value": "AccountStatusUserDetailsChecker.locked,AclEntryAfterInvocationProvider.noPermission,BindAuthenticator.emptyPassword",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lang",
+							"value": "ko",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-auth-token",
+						"value": "016ae37b-fb59-4c1a-91d6-3956379a773c",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "LOCALIZATION-QUERY-ADVANCED"
+			},
+			"response": []
+		},
+		{
+			"name": "LOCALIZATION-MODIFY",
+			"request": {
+				"url": "http://localhost:8080/i18n/messages/AbstractUserDetailsAuthenticationProvider.onlySupports/en",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3efb74386e92440f8e8a84777c007cea\",\r\n    \"code\": \"AbstractUserDetailsAuthenticationProvider.onlySupports\",\r\n    \"lang\": \"en\",\r\n    \"value\": \"Only UsernamePasswordAuthenticationToken is supported 22\",\r\n    \"creator\": \"aider\"\r\n}"
+				},
+				"description": "LOCALIZATION-MODIFY"
+			},
+			"response": []
+		},
+		{
+			"name": "LOCALIZATION-REMOVE",
+			"request": {
+				"url": "http://localhost:8080/i18n/messages/localeService.hello/en",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3efb74386e92440f8e8a84777c007cea\",\r\n    \"code\": \"AbstractUserDetailsAuthenticationProvider.onlySupports\",\r\n    \"lang\": \"en\",\r\n    \"value\": \"Only UsernamePasswordAuthenticationToken is supported 22\",\r\n    \"creator\": \"aider\"\r\n}"
+				},
+				"description": "LOCALIZATION-REMOVE"
+			},
+			"response": []
+		}
+	]
+}
